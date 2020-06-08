@@ -80,6 +80,8 @@ end
   def full?
     @board.all? {|no_space| no_space != " "}
   end
+  
+  def draw?
 
   
   
