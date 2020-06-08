@@ -37,7 +37,7 @@ end
     !position_taken?(index) && index.between?(0,8)
   end 
    
-  # Counter start 1, iterate existing board, increment from last play
+  # Counter start 0, iterate existing board, increment from last play
   def turn_count
     turn_number = 0 
     @board.each do |place|
@@ -48,10 +48,11 @@ end
     return turn_number
   end 
   
-  
+  # odds evens
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
+  
   
   def turn
     puts "Please enter 1-9:"
@@ -66,6 +67,7 @@ end
     end
   end
   
+  
   def won?
   WIN_COMBINATIONS.detect do |win|
     if (@board[win[0]]) == "X" && (@board[win[1]]) == "X" && (@board[win[2]]) == "X"
@@ -77,20 +79,23 @@ end
   end
 end
 
+  #all spaces negate value of empty string 
   def full?
     @board.all? {|no_space| no_space != " "}
   end
   
+  # If board is full and theres  no winner
   def draw?
     full? && !won?
   end 
   
+  # theres either a winner or a draw
   def over? 
     won? || draw?
   end 
   
   # way to use win? here to abstract code?
-  def winner
+def winner
   WIN_COMBINATIONS.detect do |win|
     if (@board[win[0]]) == "X" && (@board[win[1]]) == "X" && (@board[win[2]]) == "X"
       return "X"
@@ -100,10 +105,10 @@ end
       nil
     end
   end
- end
+end
 
-
- def play
+# game is not over, and no one has won. If theres a winner, put out winning message, same on draw
+def play
   while over? == false
     turn
   end
