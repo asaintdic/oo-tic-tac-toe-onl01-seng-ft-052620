@@ -37,10 +37,10 @@ end
   end 
    
   # Counter start 1, iterate existing board, increment from last play
-  def turn_count(board)
+  def turn_count
     turn_number = 0 
-    board.each do |place|
-      if place == "X" || place == "0"
+    @board.each do |place|
+      if place == "X" || place == "O"
         turn_number += 1 
       end 
     end 
