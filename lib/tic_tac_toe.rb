@@ -78,7 +78,8 @@ end
 end
 
   def full?
-    @board.all? {|no_space|
+    @board.all? {|no_space| no_space != ""}
+  end
 
   
   
