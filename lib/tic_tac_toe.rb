@@ -65,6 +65,8 @@ end
       turn
     end
   end
+  
+  def won 
 
   
   
