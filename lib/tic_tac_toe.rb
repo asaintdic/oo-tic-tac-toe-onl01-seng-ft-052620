@@ -23,7 +23,8 @@ end
     u_input.to_i - 1 
   end 
   
-  def move
+  def move( position, cur)
+    @board[position] = cur
   end
  
  # If inputted board index == X or O then true. (can you do reverse with "")
