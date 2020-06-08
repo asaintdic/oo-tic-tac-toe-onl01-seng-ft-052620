@@ -101,9 +101,9 @@ end
     end
   end
  end
-end
 
-  def play
+
+ def play
   while over? == false
     turn
   end
@@ -112,5 +112,5 @@ end
   elsif draw?
     puts "Cat's Game!"
   end
-  
+ end   
 end
