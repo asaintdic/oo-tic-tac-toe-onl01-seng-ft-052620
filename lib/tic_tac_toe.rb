@@ -44,7 +44,7 @@ end
         turn_number += 1 
       end 
     end 
-    return turn_number + 1
+    return turn_number
   end 
   
   
