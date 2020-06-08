@@ -83,6 +83,7 @@ end
   
   def draw?
     full? && won? == false 
+  end 
   
 
   
